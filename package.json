@@ -1,6 +1,11 @@
 {
   "name": "@xifo/root",
   "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build --scope='{@xifo/ui,@xifo/system}'",
+    "build:docs": "lerna run build --scope=@xifo/docs"
+  },
   "devDependencies": {
     "lerna": "^5.1.8"
   },
