@@ -4,11 +4,17 @@ import TypographyRoot, { innerCls, TypographyProps } from './TypographyRoot';
 
 
 function elementAs(type: string | undefined) {
-  if (type && ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span', 'code'].includes(type)) {
+  if (!type) {
+    return 'span';
+  }
+
+  if (['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span', 'code'].includes(type)) {
     return type as ElementType;
   }
 
-  return 'span';
+  if (['lgTitle', 'title'].includes(type)) {
+    return 'h1'
+  }
 }
 
 const Typography = (props: TypographyProps) => {
