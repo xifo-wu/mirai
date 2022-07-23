@@ -3,7 +3,7 @@ import isPropValid from '@emotion/is-prop-valid';
 import { genInnerCls, createTheme } from '@xifo/system';
 import { HTMLAttributes, ReactNode } from 'react';
 
-type TypographyType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'secondary' | 'code';
+type TypographyType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'secondary' | 'code' | 'lgTitle';
 
 export interface TypographyProps extends HTMLAttributes<HTMLElement> {
   children?: ReactNode;
@@ -85,6 +85,14 @@ const TypographyRoot = styled('span', {
         background: '#f2f4f5',
         border: '1px solid rgba(0, 0, 0, 0.06)',
         borderRadius: 3,
+      },
+    }),
+    ...(type === 'lgTitle' && {
+      [`&.${cls}`]: {
+        margin: '0',
+        lineHeight: '1.15',
+        fontSize: '4rem',
+        fontWeight: 'bold',
       },
     }),
     ...props.style,
