@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
-import { genInnerCls, createTheme } from '@xifo/system';
-import { HTMLAttributes, ReactNode } from 'react';
+import { genInnerCls, createTheme, Theme } from '@xifo/system';
+import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 
 type TypographyType =
   | 'h1'
@@ -19,14 +19,15 @@ export interface TypographyProps extends HTMLAttributes<HTMLElement> {
   children?: ReactNode;
   className?: string;
   type?: TypographyType;
+  sx?: CSSProperties | ((theme: Theme) => CSSProperties);
 }
 
 export const innerCls = genInnerCls('typography');
 
 const TypographyRoot = styled('span', {
-  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'type',
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'type' && prop !== 'sx',
 })<TypographyProps>((props) => {
-  const { type = '', theme: outerTheme } = props;
+  const { type = '', sx, theme: outerTheme } = props;
   const cls = type && `${innerCls}-${type}`;
   const theme = createTheme(outerTheme);
 
@@ -113,6 +114,7 @@ const TypographyRoot = styled('span', {
         fontWeight: 'bold',
       },
     }),
+    ...sx,
     ...props.style,
   };
 });

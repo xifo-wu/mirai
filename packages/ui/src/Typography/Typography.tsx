@@ -1,7 +1,7 @@
 import React, { ElementType } from 'react';
 import classNames from 'classnames';
+import { useSx } from '@xifo/system';
 import TypographyRoot, { innerCls, TypographyProps } from './TypographyRoot';
-
 
 function elementAs(type: string | undefined) {
   if (!type) {
@@ -18,13 +18,15 @@ function elementAs(type: string | undefined) {
 }
 
 const Typography = (props: TypographyProps) => {
-  const { className, type, children, ...rest } = props;
+  const { className, type, sx: outerSx, children, ...rest } = props;
+  const sx = useSx(outerSx)
 
   return (
     <TypographyRoot
       className={classNames(innerCls, { [`${innerCls}-${type}`]: !!type }, className)}
       as={elementAs(type)}
       type={type}
+      sx={sx}
       {...rest}
     >
       {children}
