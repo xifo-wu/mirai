@@ -17,9 +17,5 @@ export default function createTheme(outerTheme: Theme) {
     return mergeTheme(needMergeModeTheme, outerTheme);
   }
 
-  if (outerTheme.mode) {
-    if (mode) return outerTheme[mode] || {};
-  }
-
   return defaultTheme;
 }
