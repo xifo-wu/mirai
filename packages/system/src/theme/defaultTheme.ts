@@ -1,4 +1,6 @@
-const defaultTheme = {
+import { Theme } from "./types";
+
+const defaultTheme: Theme = {
   // 默认白天模式
   mode: 'light',
   general: {

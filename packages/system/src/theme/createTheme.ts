@@ -1,4 +1,4 @@
-import { Theme } from '@emotion/react';
+import { Theme } from './types';
 import defaultTheme from './defaultTheme';
 
 export default function createTheme(outerTheme: Theme) {
