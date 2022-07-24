@@ -10,7 +10,7 @@ export interface BoxProps extends HTMLAttributes<HTMLDivElement> {
   sx?: CSSProperties | ((theme: Theme) => CSSProperties);
 }
 
-export const innerCls = genInnerCls('box');
+const innerCls = genInnerCls('box');
 
 const BoxRoot = styled('div', {
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'sx',
