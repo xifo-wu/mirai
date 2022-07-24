@@ -1,13 +1,12 @@
-import React, { CSSProperties, ElementType, forwardRef, ReactNode } from 'react';
+import React, { CSSProperties, forwardRef, HTMLAttributes, ReactNode } from 'react';
 import classNames from 'classnames';
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
 import { genInnerCls, Theme, useSx } from '@xifo/system';
 
-export interface BoxProps {
+export interface BoxProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
   className?: string;
-  component?: ElementType;
   sx?: CSSProperties | ((theme: Theme) => CSSProperties);
 }
 
@@ -24,14 +23,13 @@ const BoxRoot = styled('div', {
 });
 
 const Box = forwardRef<HTMLDivElement, BoxProps>((props: BoxProps, ref) => {
-  const { children, component, className, sx: outerSx, ...rest } = props;
+  const { children, className, sx: outerSx, ...rest } = props;
   const sx = useSx(outerSx);
-  const Element = component || BoxRoot;
 
   return (
-    <Element ref={ref} className={classNames(innerCls, className)} sx={sx} {...rest}>
+    <BoxRoot ref={ref} className={classNames(innerCls, className)} sx={sx} {...rest}>
       {children}
-    </Element>
+    </BoxRoot>
   );
 });
 
