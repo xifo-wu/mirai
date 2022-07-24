@@ -29,7 +29,7 @@ const TypographyRoot = styled('span', {
 })<TypographyProps>((props) => {
   const { type = '', sx, theme: outerTheme } = props;
   const cls = type && `${innerCls}-${type}`;
-  const theme = createTheme(outerTheme);
+  const theme = createTheme(outerTheme)[outerTheme.mode || 'light'];
 
   return {
     overflowWrap: 'break-word',
