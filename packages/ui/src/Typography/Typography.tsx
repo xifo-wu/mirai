@@ -1,7 +1,9 @@
 import React, { ElementType } from 'react';
 import classNames from 'classnames';
-import { useSx } from '@xifo/system';
-import TypographyRoot, { innerCls, TypographyProps } from './TypographyRoot';
+import { genInnerCls, useSx } from '@xifo/system';
+import TypographyRoot, { TypographyProps } from './TypographyRoot';
+
+const innerCls = genInnerCls('typography');
 
 function elementAs(type: string | undefined) {
   if (!type) {

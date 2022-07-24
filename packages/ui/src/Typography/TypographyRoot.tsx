@@ -22,7 +22,7 @@ export interface TypographyProps extends HTMLAttributes<HTMLElement> {
   sx?: CSSProperties | ((theme: Theme) => CSSProperties);
 }
 
-export const innerCls = genInnerCls('typography');
+const innerCls = genInnerCls('typography');
 
 const TypographyRoot = styled('span', {
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'type' && prop !== 'sx',
