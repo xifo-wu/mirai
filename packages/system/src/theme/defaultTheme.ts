@@ -1,4 +1,6 @@
-import { Theme } from "./types";
+import { Theme } from './types';
+
+export const BREAKPOINTS = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
 
 const defaultTheme: Theme = {
   // 默认白天模式
@@ -15,6 +17,13 @@ const defaultTheme: Theme = {
     lg: {
       fontSize: '0.9375rem',
       padding: '6px 20px',
+    },
+    breakpoints: {
+      xs: 576,
+      sm: 768,
+      md: 992,
+      lg: 1200,
+      xl: 1400,
     },
   },
   // 白天模式

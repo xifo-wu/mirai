@@ -18,9 +18,13 @@ interface General {
   padding: string | number;
 }
 
+type Breakpoint = {
+  [size in 'xs' | 'sm' | 'md' | 'lg' | 'xl']: number;
+};
+
 export interface LocalTheme {
   mode: 'light' | 'dark';
-  general: Record<'sm' | 'md' | 'lg', General>;
+  general: Record<'sm' | 'md' | 'lg', General> & Record<'breakpoints', Breakpoint>;
   dark: Partial<ModeStyle>;
   light: Partial<ModeStyle>;
 }
