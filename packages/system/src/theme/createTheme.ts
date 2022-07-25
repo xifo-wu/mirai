@@ -6,7 +6,7 @@ export default function createTheme(outerTheme: Theme) {
   const mode = outerTheme?.mode || 'light';
 
   if (['light', 'dark'].includes(mode)) {
-    return defaultTheme;
+    return outerTheme;
   }
 
   if (mode) {
