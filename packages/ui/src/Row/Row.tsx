@@ -19,7 +19,7 @@ const innerCls = genInnerCls('row');
 const RowRoot = styled(Box, {
   shouldForwardProp: (prop) => isPropValid(prop) && !['sx', 'gutter'].includes(prop),
 })<RowProps>((props) => {
-  const { gutter, justify, align } = props;
+  const { gutter, sx, justify, align } = props;
   const margin = gutter && { margin: typeof gutter === 'number' ? -gutter / 2 : -gutter[0] / 2 };
 
   return {
@@ -28,6 +28,7 @@ const RowRoot = styled(Box, {
     flexWrap: 'wrap',
     justifyContent: justify,
     alignItems: align,
+    ...sx
   };
 });
 
