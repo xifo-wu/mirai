@@ -2,7 +2,7 @@ import React, { CSSProperties, forwardRef, ReactNode } from 'react';
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
 import classNames from 'classnames';
-import { createTheme, genInnerCls, Theme, useSx } from '@xifo/system';
+import { createTheme, genInnerCls, Theme, useSx } from '@xifo/mirai-system';
 
 export interface ContainerProps {
   maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | number;

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
-import { genInnerCls, createTheme, Theme } from '@xifo/system';
+import { genInnerCls, createTheme, Theme } from '@xifo/mirai-system';
 import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 
 type TypographyType =

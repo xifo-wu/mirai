@@ -1,7 +1,7 @@
 // 学习自 material-ui CssBaseline
 import React from 'react';
 import { Global } from '@emotion/react';
-import { createTheme, Theme, useTheme } from '@xifo/system';
+import { createTheme, Theme, useTheme } from '@xifo/mirai-system';
 
 interface CSSBaseLineProps {
   children?: React.ReactNode;

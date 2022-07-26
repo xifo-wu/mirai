@@ -2,7 +2,7 @@ import React, { CSSProperties, forwardRef, HTMLAttributes, ReactNode } from 'rea
 import classNames from 'classnames';
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
-import { genInnerCls, Theme, useSx } from '@xifo/system';
+import { genInnerCls, Theme, useSx } from '@xifo/mirai-system';
 
 export interface BoxProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;

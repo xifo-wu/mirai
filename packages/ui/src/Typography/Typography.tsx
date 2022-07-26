@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 import classNames from 'classnames';
-import { genInnerCls, useSx } from '@xifo/system';
+import { genInnerCls, useSx } from '@xifo/mirai-system';
 import TypographyRoot, { TypographyProps } from './TypographyRoot';
 
 const innerCls = genInnerCls('typography');

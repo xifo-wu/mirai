@@ -2,7 +2,7 @@ import React, { CSSProperties, forwardRef, useContext } from 'react';
 import classNames from 'classnames';
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
-import { BREAKPOINTS, createTheme, genInnerCls, Theme } from '@xifo/system';
+import { BREAKPOINTS, createTheme, genInnerCls, Theme } from '@xifo/mirai-system';
 import { Box, BoxProps } from '../../Box';
 import { RowProps } from '../Row';
 import RowContext from '../RowContext';
