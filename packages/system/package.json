@@ -1,5 +1,5 @@
 {
-  "name": "@xifo/system",
+  "name": "@xifo/mirai-system",
   "version": "0.0.0",
   "description": "",
   "main": "./lib/index.js",

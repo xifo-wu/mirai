@@ -1,5 +1,5 @@
 {
-  "name": "@xifo/ui",
+  "name": "@xifo/mirai-ui",
   "version": "0.0.0",
   "description": "A simple react component library",
   "main": "./lib/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@xifo/root",
+  "name": "@xifo/mirai-root",
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
