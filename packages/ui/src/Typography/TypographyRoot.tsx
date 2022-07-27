@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
-import { genInnerCls, createTheme, Theme } from '@xifo/mirai-system';
-import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
+import { createTheme, SxType } from '@xifo/mirai-system';
+import type {  HTMLAttributes, ReactNode } from 'react';
 
 type TypographyType =
   | 'h1'
@@ -19,7 +19,7 @@ export interface TypographyProps extends HTMLAttributes<HTMLElement> {
   children?: ReactNode;
   className?: string;
   type?: TypographyType;
-  sx?: CSSProperties | ((theme: Theme) => CSSProperties);
+  sx?: SxType;
 }
 
 const TypographyRoot = styled('span', {

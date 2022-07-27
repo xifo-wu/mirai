@@ -1,3 +1,5 @@
+import { CSSObject } from '@emotion/react';
+
 export interface ModeStyle {
   text: {
     primary?: string;
@@ -30,6 +32,7 @@ export interface LocalTheme {
 }
 
 export interface Theme extends Partial<LocalTheme> {}
+export type SxType = CSSObject | ((theme: Theme) => CSSObject) | undefined;
 
 declare module '@emotion/react' {
   export interface Theme extends Partial<LocalTheme> {}

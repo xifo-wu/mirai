@@ -1,13 +1,13 @@
-import React, { CSSProperties, forwardRef, ReactNode } from 'react';
+import React, { forwardRef, ReactNode } from 'react';
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
 import classNames from 'classnames';
-import { createTheme, genInnerCls, Theme, useSx } from '@xifo/mirai-system';
+import { createTheme, genInnerCls, SxType, useSx } from '@xifo/mirai-system';
 
 export interface ContainerProps {
   maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | number;
   className?: string;
-  sx?: CSSProperties | ((theme: Theme) => CSSProperties);
+  sx?: SxType;
   children?: ReactNode;
 }
 

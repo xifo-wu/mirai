@@ -1,13 +1,13 @@
-import React, { CSSProperties, forwardRef, HTMLAttributes, ReactNode } from 'react';
+import React, { forwardRef, HTMLAttributes, ReactNode } from 'react';
 import classNames from 'classnames';
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
-import { genInnerCls, Theme, useSx } from '@xifo/mirai-system';
+import { genInnerCls, SxType, useSx } from '@xifo/mirai-system';
 
 export interface BoxProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
   className?: string;
-  sx?: CSSProperties | ((theme: Theme) => CSSProperties);
+  sx?: SxType;
 }
 
 const innerCls = genInnerCls('box');

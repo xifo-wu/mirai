@@ -1,9 +1,8 @@
 import { useTheme } from '@emotion/react';
-import type { CSSProperties } from 'react';
 import mergeTheme from './mergeTheme';
-import { Theme } from './types';
+import { SxType } from './types';
 
-export default function useSx(sx: CSSProperties | ((theme: Theme) => CSSProperties) | undefined) {
+export default function useSx(sx: SxType) {
   const themeCtx = useTheme();
   const theme = mergeTheme(themeCtx);
 
