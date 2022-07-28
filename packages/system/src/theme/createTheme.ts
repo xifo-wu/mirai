@@ -2,7 +2,7 @@ import { Theme } from './types';
 import defaultTheme from './defaultTheme';
 import mergeTheme from './mergeTheme';
 
-export default function createTheme(outerTheme: Theme) {
+export default function createTheme(outerTheme: Theme): Theme {
   const mode = outerTheme?.mode || 'light';
 
   if (['light', 'dark'].includes(mode)) {
