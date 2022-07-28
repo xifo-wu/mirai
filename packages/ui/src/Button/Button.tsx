@@ -202,7 +202,7 @@ interface ButtonBaseProps extends ButtonProps {
 }
 
 const ButtonBase = styled('button', {
-  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'color' && prop !== 'variant',
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'color' && prop !== 'variant' && prop !== 'loading',
 })<ButtonBaseProps>((props) => {
   const {
     gradient,
