@@ -26,7 +26,7 @@ export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const getLayout = Component.getLayout || ((page) => page);
 
-  const theme: Theme = { mode: 'dark' };
+  const theme: Theme = { mode: 'light' };
 
   return (
     <CacheProvider value={emotionCache}>
