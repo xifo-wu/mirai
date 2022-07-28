@@ -53,28 +53,35 @@ interface GetBreakpointsType {
 
 const getBreakpoints = ({ theme, sizes, offset, grow }: GetBreakpointsType) => {
   return BREAKPOINTS.reduce<Record<string, CSSProperties>>((result, size) => {
-    if (!sizes[size]) {
+    const innerSize = sizes[size];
+    if (typeof innerSize === 'undefined') {
       return result;
     }
 
     const mediaWidth = theme.general!.breakpoints[size];
+
+    if (innerSize === 0) {
+      result[`@media (min-width: ${mediaWidth + 1}px)`] = {
+        display: 'none',
+      };
+      return result;
+    }
+
     result[`@media (min-width: ${mediaWidth + 1}px)`] = {
-      flexBasis: getWidth(sizes[size]!),
+      flexBasis: getWidth(innerSize!),
       flexShrink: 0,
-      maxWidth: grow ? 'unset' : getWidth(sizes[size]!),
+      maxWidth: grow ? 'unset' : getWidth(innerSize!),
       marginLeft: getOffset(offset),
+      display: 'unset',
     };
 
     return result;
   }, {});
 };
 
-const ColRoot = styled(
-  Box,
-  {
-    shouldForwardProp: (prop) => isPropValid(prop),
-  },
-)<ColProps & Pick<RowProps, 'grow' | 'gutter'>>((props) => {
+const ColRoot = styled(Box, {
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'span',
+})<ColProps & Pick<RowProps, 'grow' | 'gutter'>>((props) => {
   const { xs, sm, md, lg, xl, theme: outerTheme, span, grow, gutter, offset } = props;
   const width = getWidth(span || maxColumns);
   const theme = createTheme(outerTheme);
@@ -93,6 +100,11 @@ const ColRoot = styled(
       offset,
       grow,
     }),
+    ...(xs === 0 && { display: 'none' }),
+    ...(sm === 0 && { display: 'none' }),
+    ...(md === 0 && { display: 'none' }),
+    ...(lg === 0 && { display: 'none' }),
+    ...(xl === 0 && { display: 'none' }),
   };
 });
 
