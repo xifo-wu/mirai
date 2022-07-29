@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { ReactNode, useContext } from 'react';
 import type { NextPage } from 'next';
 import { Box, Button, Col, Container, Divider, Row, Typography } from '@xifo/mirai-ui';
 import CheckIcon from '@/components/Icons/CheckIcon';
@@ -9,6 +9,12 @@ import GithubIcon from '@/components/Icons/GithubIcon';
 import SystemUtilIcon from '@/components/Icons/SystemUtilIcon';
 import ComponentsIcon from '@/components/Icons/ComponentsIcon';
 import IdeaIcon from '@/components/Icons/IdeaIcon';
+import ColorModeContext from '@/ColorModeContext';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism'; // 代码高亮主题风格
+import { useTheme } from '@xifo/mirai-system';
+import SunnyIcon from '@/components/Icons/SunnyIcon';
+import BedtimeIcon from '@/components/Icons/BedtimeIcon';
 
 const WebsiteTitle = ({ children }: { children: ReactNode }) => (
   <Typography
@@ -27,7 +33,49 @@ const WebsiteTitle = ({ children }: { children: ReactNode }) => (
   </Typography>
 );
 
+const changeThemeCode = `import React, { useMemo, useState } from 'react';
+import { createTheme, Theme, useTheme, ThemeProvider } from '@xifo/mirai-system';
+
+const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
+
+const Page = () => {
+  const theme = useTheme();
+  const colorMode = useContext(ColorModeContext);
+
+  return (
+    <Box>
+      <Button onClick={colorMode.toggleColorMode}>{theme.mode === 'light' ? 'dark' : 'light'}</Button>
+    <Box>
+  )
+}
+
+export default function App() {
+  const [mode, setMode] = useState<'dark' | 'light'>('light');
+  const theme: Theme = useMemo(() => createTheme({ mode }), [mode]);
+
+  const colorMode = useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      },
+    }),
+    [],
+  );
+
+  return (
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <Page />
+      </ThemeProvider>
+    </ColorModeContext.Provider>
+  )
+}
+`;
+
 const Home: NextPage = () => {
+  const colorMode = useContext(ColorModeContext);
+  const theme = useTheme();
+
   return (
     <>
       <GradientBackground />
@@ -109,7 +157,7 @@ const Home: NextPage = () => {
                     return {
                       borderRadius: 8,
                       backgroundImage:
-                        'url("https://images.unsplash.com/photo-1522748906645-95d8adfd52c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")',
+                        'url("https://images.unsplash.com/photo-1658847133295-1693456b858c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2971&q=80")',
                       width: '100%',
                       position: 'relative',
                       backgroundRepeat: 'no-repeat',
@@ -172,7 +220,9 @@ const Home: NextPage = () => {
               <Typography type="h3" sx={{ marginTop: 16 }}>
                 Components
               </Typography>
-              <Typography type="secondary">提供多个可定制、可覆盖样式主题组件，在 React 中可以随时使用它</Typography>
+              <Typography type="secondary">
+                提供多个可定制、可覆盖样式主题组件，在 React 中可以随时使用它
+              </Typography>
             </Box>
           </Col>
           <Col md={8} sm={12} xs={24}>
@@ -196,6 +246,63 @@ const Home: NextPage = () => {
                 提供一些系统工具，包含颜色工具（生成更深或更浅一点的颜色）以及一些默认类型
               </Typography>
             </Box>
+          </Col>
+        </Row>
+
+        <Box sx={{ marginBottom: 48, marginTop: 48 }}>
+          <Box sx={{ textAlign: 'center' }}>
+            <Typography
+              sx={{
+                background:
+                  'linear-gradient(95deg, #1c7ed6 15%, #22b8cf 45%, #FB5343 75%, #6549D5 100%) 98%/200% 100%',
+                textTransform: 'capitalize',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                marginBottom: 16,
+                display: 'inline-block',
+              }}
+            >
+              Switch Theme
+            </Typography>
+            <Typography type="h1">切换主题</Typography>
+          </Box>
+        </Box>
+
+        <Row gutter={[16, 16]} sx={{ marginBottom: 40 }}>
+          <Col md={16} sm={16}>
+            <Typography
+              type="secondary"
+              sx={{ display: 'block', lineHeight: 2, marginTop: '0.5em' }}
+            >
+              只需几行代码即可将 Dark 主题添加到您的应用程序中，Mirai UI 所有组件都支持开箱即用的
+              Dark 主题
+            </Typography>
+            <Typography type="secondary" sx={{ display: 'block', lineHeight: 2 }}>
+              您可以通过 React Context 在页面内使用按钮切换主题。
+            </Typography>
+          </Col>
+          <Col md={8} sm={8}>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100%',
+              }}
+            >
+              <Button
+                leftIcon={theme.mode === 'light' ? <BedtimeIcon /> : <SunnyIcon />}
+                onClick={colorMode.toggleColorMode}
+              >
+                {theme.mode === 'light' ? 'Dark 主题' : 'Light 主题'}
+              </Button>
+            </Box>
+          </Col>
+          <Col md={24} sm={24}>
+            <SyntaxHighlighter language="jsx" style={vscDarkPlus}>
+              {changeThemeCode}
+            </SyntaxHighlighter>
           </Col>
         </Row>
       </Container>

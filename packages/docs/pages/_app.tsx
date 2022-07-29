@@ -1,11 +1,12 @@
-import type { ReactElement, ReactNode } from 'react';
+import { ReactElement, ReactNode, useMemo, useState } from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 import type { NextPage } from 'next';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import createEmotionCache from '../src/createEmotionCache';
-import { Theme, ThemeProvider } from '@xifo/mirai-system';
+import { createTheme, Theme, ThemeProvider } from '@xifo/mirai-system';
 import { CssBaseline } from '@xifo/mirai-ui';
+import ColorModeContext from '@/ColorModeContext';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -26,7 +27,17 @@ export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const getLayout = Component.getLayout || ((page) => page);
 
-  const theme: Theme = { mode: 'light' };
+  const [mode, setMode] = useState<'dark' | 'light'>('light');
+  const theme: Theme = useMemo(() => createTheme({ mode }), [mode]);
+
+  const colorMode = useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      },
+    }),
+    [],
+  );
 
   return (
     <CacheProvider value={emotionCache}>
@@ -39,10 +50,12 @@ export default function MyApp(props: MyAppProps) {
         <title>Mirai UI</title>
       </Head>
 
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        {getLayout(<Component {...pageProps} />)}
-      </ThemeProvider>
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          {getLayout(<Component {...pageProps} />)}
+        </ThemeProvider>
+      </ColorModeContext.Provider>
     </CacheProvider>
   );
 }
