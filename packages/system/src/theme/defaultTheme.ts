@@ -43,7 +43,7 @@ const defaultTheme: Theme = {
   // 夜间模式
   dark: {
     text: {
-      primary: '#fff',
+      primary: 'rgba(255, 255, 255, 0.85)',
       secondary: 'rgba(255, 255, 255, 0.7)',
       disabled: 'rgba(255, 255, 255, 0.5)',
     },
