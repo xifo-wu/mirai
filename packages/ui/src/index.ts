@@ -5,3 +5,4 @@ export * from './Container';
 export * from './CssBaseline';
 export * from './Button';
 export * from './Divider';
+export * from './Switch';
