@@ -1,6 +1,6 @@
 import { ReactNode, useContext } from 'react';
 import type { NextPage } from 'next';
-import { Box, Button, Col, Container, Divider, Row, Typography } from '@xifo/mirai-ui';
+import { Box, NavBar, Button, Col, Container, Divider, Row, Typography } from '@xifo/mirai-ui';
 import CheckIcon from '@/components/Icons/CheckIcon';
 import FeaturesList from '@/components/FeaturesList';
 import GradientBackground from '@/components/GradientBackground';
@@ -79,6 +79,24 @@ const Home: NextPage = () => {
   return (
     <>
       <GradientBackground />
+      <NavBar
+        extra={[
+          theme.mode === 'light' ? (
+            <BedtimeIcon
+              key="dark"
+              style={{ cursor: 'pointer' }}
+              fill="#333"
+              onClick={colorMode.toggleColorMode}
+            />
+          ) : (
+            <SunnyIcon
+              key="light"
+              style={{ cursor: 'pointer' }}
+              onClick={colorMode.toggleColorMode}
+            />
+          ),
+        ]}
+      />
       <Container>
         <Box
           sx={{
