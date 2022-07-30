@@ -1,5 +1,6 @@
 import { ReactNode, useContext } from 'react';
 import type { NextPage } from 'next';
+import { useRouter } from 'next/router';
 import { Box, NavBar, Button, Col, Container, Divider, Row, Typography } from '@xifo/mirai-ui';
 import CheckIcon from '@/components/Icons/CheckIcon';
 import FeaturesList from '@/components/FeaturesList';
@@ -15,23 +16,7 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism'; //
 import { useTheme } from '@xifo/mirai-system';
 import SunnyIcon from '@/components/Icons/SunnyIcon';
 import BedtimeIcon from '@/components/Icons/BedtimeIcon';
-
-const WebsiteTitle = ({ children }: { children: ReactNode }) => (
-  <Typography
-    type="lgTitle"
-    sx={{
-      background: 'linear-gradient(to right, #1c7ed6 15%, #22b8cf 100%)',
-      fontWeight: 'bold',
-      fontSize: 75,
-      letterSpacing: 4,
-      textTransform: 'capitalize',
-      backgroundClip: 'text',
-      WebkitTextFillColor: 'transparent',
-    }}
-  >
-    {children}
-  </Typography>
-);
+import WebsiteTitle from '@/components/WebsiteTitle';
 
 const changeThemeCode = `import React, { useMemo, useState } from 'react';
 import { createTheme, Theme, useTheme, ThemeProvider } from '@xifo/mirai-system';
@@ -75,6 +60,7 @@ export default function App() {
 const Home: NextPage = () => {
   const colorMode = useContext(ColorModeContext);
   const theme = useTheme();
+  const router = useRouter();
 
   return (
     <>
@@ -152,6 +138,7 @@ const Home: NextPage = () => {
                     radius="xl"
                     rightIcon={<RightArrow color="#fff" />}
                     sx={{ margin: 8 }}
+                    onClick={() => router.push('/getting-started')}
                   >
                     开始使用
                   </Button>
