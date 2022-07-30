@@ -6,6 +6,7 @@ export interface FeaturesListItemProps {
   key: Key;
   content?: ReactNode;
   icon?: ReactNode;
+  onClick?: () => void;
 }
 
 export interface FeaturesListProps {
@@ -37,7 +38,7 @@ const FeaturesList = (props: FeaturesListProps) => {
   return (
     <ULRoot>
       {items?.map((item) => (
-        <LIRoot key={item.key}>
+        <LIRoot key={item.key} onClick={item?.onClick}>
           {item.icon}
           <Box sx={{ marginLeft: 8 }}>{item.content}</Box>
         </LIRoot>
