@@ -127,7 +127,7 @@ const Divider = (props: DividerProps) => {
         [`${innerCls}-text-${textAlign}`]: !!textAlign,
       })}
     >
-      {!!children && <div style={{ padding: '0 1rem' }}>{children}</div>}
+      {!!children && <div style={{ padding: '0 1rem', whiteSpace: 'nowrap' }}>{children}</div>}
     </DividerBase>
   );
 };
