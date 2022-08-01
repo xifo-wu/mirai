@@ -1,0 +1,22 @@
+{
+  "name": "@xifo/mirai-hooks",
+  "version": "0.0.0",
+  "description": "A React hooks library",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json --target ES5 --outDir lib"
+  },
+  "keywords": [
+    "react",
+    "react-hooks",
+    "hooks"
+  ],
+  "author": "Xifo",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.0.15",
+    "react": "^18.2.0",
+    "typescript": "^4.7.4"
+  }
+}
