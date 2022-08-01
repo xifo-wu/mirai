@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run build --scope='{@xifo/mirai-ui,@xifo/mirai-system}'",
+    "build": "lerna run build --scope='{@xifo/mirai-ui,@xifo/mirai-system,@xifo/mirai-hooks}'",
+    "build:hooks": "lerna run build --scope=@xifo/mirai-hooks",
     "build:docs": "lerna run build --scope=@xifo/mirai-docs",
     "dev": "yarn --cwd ./packages/docs dev"
   },
