@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
 import { createTheme, SxType } from '@xifo/mirai-system';
-import type {  HTMLAttributes, ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 type TypographyType =
   | 'h1'
@@ -72,11 +72,19 @@ const TypographyRoot = styled('span', {
       color: theme?.text?.secondary,
     }),
     ...(type === 'code' && {
-      margin: '0 1px',
+      margin: '0 3px',
       padding: '0.2em 0.4em',
       fontSize: '0.9em',
-      background: '#f2f4f5',
-      border: '1px solid rgba(0, 0, 0, 0.06)',
+      ...(outerTheme.mode === 'light'
+        ? {
+            background: '#f2f4f5',
+            border: '1px solid rgba(0, 0, 0, 0.06)',
+          }
+        : {
+            background: 'rgba(150, 150, 150, 0.1)',
+            border: '1px solid rgba(100, 100, 100, 0.2)',
+          }),
+      transition: 'background-color ease-out 800ms',
       borderRadius: 3,
     }),
     ...(type === 'title' && {
