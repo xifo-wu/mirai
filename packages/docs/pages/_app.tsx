@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, useMemo, useState } from 'react';
+import { ReactElement, ReactNode, useMemo, useState, useEffect } from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 import type { NextPage } from 'next';
@@ -28,12 +28,30 @@ export default function MyApp(props: MyAppProps) {
   const getLayout = Component.getLayout || ((page) => page);
 
   const [mode, setMode] = useState<'dark' | 'light'>('light');
+
+  useEffect(() => {
+    function getThemeMode() {
+      const localValue = window.localStorage.getItem('theme');
+      if (localValue) {
+        return JSON.parse(localValue);
+      }
+
+      return 'light';
+    }
+
+    setMode(getThemeMode());
+  }, []);
+
   const theme: Theme = useMemo(() => createTheme({ mode }), [mode]);
 
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+        setMode((prevMode) => {
+          const nextValue = prevMode === 'light' ? 'dark' : 'light';
+          window.localStorage.setItem('theme', JSON.stringify(nextValue));
+          return nextValue;
+        });
       },
     }),
     [],
