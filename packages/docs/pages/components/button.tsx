@@ -1,11 +1,12 @@
 import React, { ReactElement, ReactNode } from 'react';
 import DocsLayout from '@/layouts/DocsLayout';
-import { Box, Button, Typography } from '@xifo/mirai-ui';
+import { Box, Typography } from '@xifo/mirai-ui';
 import CustomSandpack from '@/components/Sandpack/CustomSandpack';
 import {
   variantCode,
   colorCode,
   sizeCode,
+  radiusCode,
   gradientCode,
 } from '@/components/DocsExampleCode/Components/button';
 
@@ -54,7 +55,7 @@ const ButtonDocsPage = () => {
         <Typography type="secondary" sx={{ lineHeight: 2 }}>
           当前按钮支持 xs、sm、md、lg、xl 五种圆角尺寸、未来将支持 px 大小
         </Typography>
-        <CustomSandpack currentPageCode={sizeCode} />
+        <CustomSandpack currentPageCode={radiusCode} />
 
         <Typography type="h5">按钮渐变（gradient）</Typography>
         <CustomSandpack currentPageCode={gradientCode} />
