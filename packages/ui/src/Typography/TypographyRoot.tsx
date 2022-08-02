@@ -59,7 +59,7 @@ const TypographyRoot = styled('span', {
     ...(type === 'h5' && {
       margin: '0px 0px 0.35em',
       fontWeight: 500,
-      fontSize: 20,
+      fontSize: 18,
       lineHeight: 1.35,
     }),
     ...(type === 'h6' && {
