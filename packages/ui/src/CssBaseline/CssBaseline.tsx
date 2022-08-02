@@ -25,7 +25,7 @@ const GlobalStyles = ({ theme }: { theme: Theme }) => {
           margin: 0,
           color: mode?.text?.primary,
           background: mode?.background,
-          transition: 'background-color ease-out 800ms',
+          transition: 'background-color ease-out 300ms',
         },
       }}
     />
