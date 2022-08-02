@@ -15,9 +15,9 @@ import { keyframes } from '@emotion/react';
 import classNames from 'classnames';
 import LoadingComponent from './Loading';
 
-type Color = string | 'default' | 'primary' | 'warning' | 'danger';
+type Color = string | 'primary' | 'warning' | 'danger';
 type Variant = 'outline' | 'light' | 'default' | 'filled' | 'link' | 'gradient';
-type Size = 'sx' | 'sm' | 'md' | 'lg' | 'xl';
+type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 type Radius = Size;
 type Gradient = {
   from: string;
@@ -26,7 +26,7 @@ type Gradient = {
 };
 
 const sizeStyle: Record<Size, CSSProperties> = {
-  sx: {
+  xs: {
     padding: '0px 14px',
     height: 30,
     borderRadius: 2,
@@ -213,7 +213,7 @@ const ButtonBase = styled('button', {
     sx,
     fullWidth,
     theme: outerTheme,
-    radius = 'sx',
+    radius = 'xs',
   } = props;
   const theme = createTheme(outerTheme);
 
