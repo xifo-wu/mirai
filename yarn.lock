@@ -1674,7 +1674,7 @@
 
 "@xifo/mirai-docs@file:/Users/seif/Projects/mirai/packages/docs":
   "resolved" "file:packages/docs"
-  "version" "0.0.0"
+  "version" "0.0.1-alpha.1"
   dependencies:
     "@codesandbox/sandpack-react" "^1.2.0"
     "@emotion/cache" "^11.9.3"
@@ -1688,17 +1688,17 @@
 
 "@xifo/mirai-hooks@file:/Users/seif/Projects/mirai/packages/hooks":
   "resolved" "file:packages/hooks"
-  "version" "0.0.0"
+  "version" "0.0.1-alpha.1"
 
 "@xifo/mirai-system@file:/Users/seif/Projects/mirai/packages/system":
   "resolved" "file:packages/system"
-  "version" "0.0.0"
+  "version" "0.0.1-alpha.1"
   dependencies:
     "lodash.defaultsdeep" "^4.6.1"
 
 "@xifo/mirai-ui@file:/Users/seif/Projects/mirai/packages/ui":
   "resolved" "file:packages/ui"
-  "version" "0.0.0"
+  "version" "0.0.1-alpha.1"
   dependencies:
     "@emotion/is-prop-valid" "^1.1.3"
 
@@ -5270,26 +5270,6 @@
   "integrity" "sha512-dg8yXdcQmvgR13RIlZbTRQOoUrDciFVoSBZILwjE2LFISxZZ8loVJKAkuzswl5js8BHda79bIb2b84ehU8IjXw=="
   "resolved" "https://registry.npmjs.org/react-universal-interface/-/react-universal-interface-0.6.2.tgz"
   "version" "0.6.2"
-
-"react-use@^17.4.0":
-  "integrity" "sha512-TgbNTCA33Wl7xzIJegn1HndB4qTS9u03QUwyNycUnXaweZkE4Kq2SB+Yoxx8qbshkZGYBDvUXbXWRUmQDcZZ/Q=="
-  "resolved" "https://registry.npmjs.org/react-use/-/react-use-17.4.0.tgz"
-  "version" "17.4.0"
-  dependencies:
-    "@types/js-cookie" "^2.2.6"
-    "@xobotyi/scrollbar-width" "^1.9.5"
-    "copy-to-clipboard" "^3.3.1"
-    "fast-deep-equal" "^3.1.3"
-    "fast-shallow-equal" "^1.0.0"
-    "js-cookie" "^2.2.1"
-    "nano-css" "^5.3.1"
-    "react-universal-interface" "^0.6.2"
-    "resize-observer-polyfill" "^1.5.1"
-    "screenfull" "^5.1.0"
-    "set-harmonic-interval" "^1.0.1"
-    "throttle-debounce" "^3.0.1"
-    "ts-easing" "^0.2.0"
-    "tslib" "^2.1.0"
 
 "react@*", "react@^16.8.0  || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18.0.0-0", "react@^18.2.0", "react@>= 0.14.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.8", "react@>=16.8.0", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="

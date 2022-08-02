@@ -61,12 +61,12 @@ const DocsLayout = (props: DocsLayoutProps) => {
       icon: <WidgetsIcon fill={isParent('/components') ? '#1890ff' : undefined} />,
       onClick: () => !isParent('/components') && router.push('/components/box'),
     },
-    // {
-    //   key: '/hooks',
-    //   content: <MenuItemTitle eqFunc={isParent} title="Hooks" keyName="/hooks" />,
-    //   icon: <PhishingIcon fill={isParent('/hooks') ? '#1890ff' : undefined} />,
-    //   onClick: () => !isParent('/hooks/') && router.push('/hooks/'),
-    // },
+    {
+      key: '/hooks',
+      content: <MenuItemTitle eqFunc={isParent} title="Hooks" keyName="/hooks" />,
+      icon: <PhishingIcon fill={isParent('/hooks') ? '#1890ff' : undefined} />,
+      onClick: () => !isParent('/hooks/') && router.push('/hooks/use-controlled'),
+    },
     // {
     //   key: '/tools',
     //   content: <MenuItemTitle eqFunc={isParent} title="Tools" keyName="/tools" />,
@@ -132,16 +132,11 @@ const DocsLayout = (props: DocsLayoutProps) => {
 
   const hooksMenuItem = [
     {
-      key: '/hooks/use-local-storage',
+      key: '/hooks/use-controlled',
       content: (
-        <MenuItemTitle
-          eqFunc={isCurrent}
-          title="useLocalStorage"
-          keyName="/hooks/use-local-storage"
-        />
+        <MenuItemTitle eqFunc={isCurrent} title="useControlled" keyName="/hooks/use-controlled" />
       ),
-      onClick: () =>
-        !isCurrent('/hooks/use-local-storage') && router.push('/hooks/use-local-storage'),
+      onClick: () => !isCurrent('/hooks/use-controlled') && router.push('/hooks/use-controlled'),
     },
   ];
 
