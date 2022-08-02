@@ -61,12 +61,12 @@ const DocsLayout = (props: DocsLayoutProps) => {
       icon: <WidgetsIcon fill={isParent('/components') ? '#1890ff' : undefined} />,
       onClick: () => !isParent('/components') && router.push('/components/box'),
     },
-    {
-      key: '/hooks',
-      content: <MenuItemTitle eqFunc={isParent} title="Hooks" keyName="/hooks" />,
-      icon: <PhishingIcon fill={isParent('/hooks') ? '#1890ff' : undefined} />,
-      onClick: () => !isParent('/hooks/') && router.push('/hooks/use-local-storage'),
-    },
+    // {
+    //   key: '/hooks',
+    //   content: <MenuItemTitle eqFunc={isParent} title="Hooks" keyName="/hooks" />,
+    //   icon: <PhishingIcon fill={isParent('/hooks') ? '#1890ff' : undefined} />,
+    //   onClick: () => !isParent('/hooks/') && router.push('/hooks/'),
+    // },
     // {
     //   key: '/tools',
     //   content: <MenuItemTitle eqFunc={isParent} title="Tools" keyName="/tools" />,
