@@ -111,12 +111,13 @@ const DividerBase = styled.div<DividerProps>((props) => {
       [`&.${innerCls}-with-text.${innerCls}-text-right:after`]: {
         width: '10%',
       },
+      borderTopStyle: props.dashed ? 'dashed' : 'solid'
     },
   };
 });
 
 const Divider = (props: DividerProps) => {
-  const { type = 'horizontal', textAlign = 'center', children } = props;
+  const { type = 'horizontal', textAlign = 'center', children, ...rest } = props;
 
   return (
     <DividerBase
@@ -126,6 +127,7 @@ const Divider = (props: DividerProps) => {
         [`${innerCls}-with-text`]: !!children,
         [`${innerCls}-text-${textAlign}`]: !!textAlign,
       })}
+      {...rest}
     >
       {!!children && <div style={{ padding: '0 1rem', whiteSpace: 'nowrap' }}>{children}</div>}
     </DividerBase>
