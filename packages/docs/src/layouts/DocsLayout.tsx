@@ -122,7 +122,7 @@ const DocsLayout = (props: DocsLayoutProps) => {
       content: (
         <MenuItemTitle
           eqFunc={isCurrent}
-          title="Typography 文字排版"
+          title="Typography 排版"
           keyName="/components/typography"
         />
       ),
