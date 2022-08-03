@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import { Box, Typography } from '@xifo/mirai-ui';
 import DocsLayout from '@/layouts/DocsLayout';
 import SyntaxHighlighter from '@/components/SyntaxHighlighter';
-import { Sandpack } from '@codesandbox/sandpack-react';
 import sandpackDefaultDependencies from '@/components/Sandpack/sandpackDefaultDependencies';
 import appCode from '@/components/Sandpack/appCode';
 import CustomSandpack from '@/components/Sandpack/CustomSandpack';
@@ -46,21 +45,7 @@ const BoxDocsPage = () => {
         <Typography type="h4" sx={{ margin: '16px 0' }}>
           代码演示
         </Typography>
-        <CustomSandpack
-          files={{
-            '/Page.js': {
-              code: boxCode,
-              active: true,
-            },
-            '/App.js': {
-              code: appCode,
-              hidden: true,
-            },
-          }}
-          customSetup={{
-            dependencies: sandpackDefaultDependencies,
-          }}
-        />
+        <CustomSandpack currentPageCode={boxCode} />
       </Box>
     </>
   );
