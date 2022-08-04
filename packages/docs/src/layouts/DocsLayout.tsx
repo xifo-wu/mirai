@@ -68,15 +68,15 @@ const DocsLayout = (props: DocsLayoutProps) => {
       icon: <PhishingIcon fill={isParent('/hooks') ? '#1890ff' : undefined} />,
       onClick: () => !isParent('/hooks/') && router.push('/hooks/use-controlled'),
     },
-    // {
-    //   key: '/tools',
-    //   content: <MenuItemTitle eqFunc={isParent} title="Tools" keyName="/tools" />,
-    //   icon: <BuildIcon fill={isParent('/tools') ? '#1890ff' : undefined} />,
-    //   onClick: () => {
-    //     console.log('hhh');
-    //     !isParent('/tools') && router.push('/tools');
-    //   },
-    // },
+    {
+      key: '/tools',
+      content: <MenuItemTitle eqFunc={isParent} title="Tools" keyName="/tools" />,
+      icon: <BuildIcon fill={isParent('/tools') ? '#1890ff' : undefined} />,
+      onClick: () => {
+        console.log('hhh');
+        !isParent('/tools') && router.push('/tools/hex-to-rgb');
+      },
+    },
   ];
 
   const componentsMenuItem = [
@@ -141,6 +141,19 @@ const DocsLayout = (props: DocsLayoutProps) => {
     },
   ];
 
+  const toolsMenuItem = [
+    {
+      key: '/tools/hex-to-rgb',
+      content: <MenuItemTitle eqFunc={isCurrent} title="hexToRgb" keyName="/tools/hex-to-rgb" />,
+      onClick: () => !isCurrent('/tools/hex-to-rgb') && router.push('/tools/hex-to-rgb'),
+    },
+    {
+      key: '/tools/rgb-to-hex',
+      content: <MenuItemTitle eqFunc={isCurrent} title="rgbToHex" keyName="/tools/rgb-to-hex" />,
+      onClick: () => !isCurrent('/tools/rgb-to-hex') && router.push('/tools/rgb-to-hex'),
+    },
+  ];
+
   return (
     <>
       <GradientBackground />
@@ -174,6 +187,15 @@ const DocsLayout = (props: DocsLayoutProps) => {
                 <Divider />
                 <Box sx={{ marginTop: 48 }}>
                   <SiderMenu activeKey={router.route} items={hooksMenuItem} />
+                </Box>
+              </>
+            )}
+
+            {isParent('/tools') && (
+              <>
+                <Divider />
+                <Box sx={{ marginTop: 48 }}>
+                  <SiderMenu activeKey={router.route} items={toolsMenuItem} />
                 </Box>
               </>
             )}
