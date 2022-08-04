@@ -6,6 +6,7 @@
     "build": "lerna run build --scope='{@xifo/mirai-ui,@xifo/mirai-system,@xifo/mirai-hooks}'",
     "build:hooks": "lerna run build --scope=@xifo/mirai-hooks",
     "build:docs": "lerna run build --scope=@xifo/mirai-docs",
+    "build:all": "yarn build && yarn build:docs",
     "dev": "yarn --cwd ./packages/docs dev"
   },
   "devDependencies": {
