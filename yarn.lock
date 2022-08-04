@@ -1676,6 +1676,7 @@
     "@emotion/react" "^11.9.3"
     "@emotion/server" "^11.4.0"
     "@emotion/styled" "^11.9.3"
+    "classnames" "^2.3.1"
     "next" "12.2.3"
     "react" "18.2.0"
     "react-dom" "18.2.0"
@@ -4420,6 +4421,30 @@
   "version" "1.1.0"
 
 "next@12.2.3":
+  "integrity" "sha512-TA0tmSA6Dk6S6kfvCNbF7CWYW8468gZUxr/3/30z4KvAQbXnl2ASYZElVe7q/hBW/1F1ee0tSBlHa4/sn+ZIBw=="
+  "resolved" "https://registry.npmjs.org/next/-/next-12.2.3.tgz"
+  "version" "12.2.3"
+  dependencies:
+    "@next/env" "12.2.3"
+    "@swc/helpers" "0.4.3"
+    "caniuse-lite" "^1.0.30001332"
+    "postcss" "8.4.14"
+    "styled-jsx" "5.0.2"
+    "use-sync-external-store" "1.2.0"
+  optionalDependencies:
+    "@next/swc-android-arm-eabi" "12.2.3"
+    "@next/swc-android-arm64" "12.2.3"
+    "@next/swc-darwin-arm64" "12.2.3"
+    "@next/swc-darwin-x64" "12.2.3"
+    "@next/swc-freebsd-x64" "12.2.3"
+    "@next/swc-linux-arm-gnueabihf" "12.2.3"
+    "@next/swc-linux-arm64-gnu" "12.2.3"
+    "@next/swc-linux-arm64-musl" "12.2.3"
+    "@next/swc-linux-x64-gnu" "12.2.3"
+    "@next/swc-linux-x64-musl" "12.2.3"
+    "@next/swc-win32-arm64-msvc" "12.2.3"
+    "@next/swc-win32-ia32-msvc" "12.2.3"
+    "@next/swc-win32-x64-msvc" "12.2.3"
 
 "node-fetch@^2.6.1", "node-fetch@^2.6.7":
   "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
@@ -6210,12 +6235,12 @@
     "type-fest" "^0.4.1"
     "write-json-file" "^3.2.0"
 
-"xtend@^4.0.0", "xtend@~4.0.1":
+"xtend@^4.0.0":
   "integrity" "sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ=="
   "resolved" "https://registry.npmjs.org/xtend/-/xtend-4.0.2.tgz"
   "version" "4.0.2"
 
-"xtend@~2.1.1":
+"xtend@~2.1.1", "xtend@~4.0.1":
   "integrity" "sha512-vMNKzr2rHP9Dp/e1NQFnLQlwlhp9L/LfvnsVdHxN1f+uggyVI3i08uD14GPvCToPkdsRfyPqIyYGmIk58V98ZQ=="
   "resolved" "https://registry.npmjs.org/xtend/-/xtend-2.1.2.tgz"
   "version" "2.1.2"
