@@ -1,4 +1,5 @@
-import { ReactNode, useContext } from 'react';
+import { useContext } from 'react';
+import Image from 'next/image';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { Box, NavBar, Button, Col, Container, Divider, Row, Typography } from '@xifo/mirai-ui';
@@ -17,6 +18,7 @@ import { useTheme } from '@xifo/mirai-system';
 import SunnyIcon from '@/components/Icons/SunnyIcon';
 import BedtimeIcon from '@/components/Icons/BedtimeIcon';
 import WebsiteTitle from '@/components/WebsiteTitle';
+import ChangeThemeMode from '@/components/ChangeMode';
 
 const changeThemeCode = `import React, { useMemo, useState } from 'react';
 import { createTheme, Theme, useTheme, ThemeProvider } from '@xifo/mirai-system';
@@ -66,23 +68,18 @@ const Home: NextPage = () => {
     <>
       <GradientBackground />
       <NavBar
-        extra={[
-          theme.mode === 'light' ? (
-            <BedtimeIcon
-              key="dark"
-              style={{ cursor: 'pointer' }}
-              fill="#333"
-              onClick={colorMode.toggleColorMode}
-            />
-          ) : (
-            <SunnyIcon
-              key="light"
-              style={{ cursor: 'pointer' }}
-              onClick={colorMode.toggleColorMode}
-            />
-          ),
-        ]}
+        logo={
+          <Image
+            src="/logo.png"
+            width={40}
+            height={40}
+            style={{ cursor: 'pointer' }}
+            onClick={() => router.push('/')}
+          />
+        }
+        extra={[<ChangeThemeMode key="change-mode" />]}
       />
+
       <Container>
         <Box
           sx={{

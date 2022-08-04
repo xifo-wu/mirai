@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Box, Col, Container, Divider, NavBar, Row, Typography } from '@xifo/mirai-ui';
 import GradientBackground from '@/components/GradientBackground';
@@ -143,7 +144,18 @@ const DocsLayout = (props: DocsLayoutProps) => {
   return (
     <>
       <GradientBackground />
-      <NavBar extra={[<ChangeThemeMode key="change-mode" />]} />
+      <NavBar
+        logo={
+          <Image
+            src="/logo.png"
+            width={40}
+            height={40}
+            style={{ cursor: 'pointer' }}
+            onClick={() => router.push('/')}
+          />
+        }
+        extra={[<ChangeThemeMode key="change-mode" />]}
+      />
       <Container sx={{ marginBottom: 32, minHeight: '100vh' }}>
         <Row gutter={[16, 16]}>
           <Col md={6} sm={24}>
