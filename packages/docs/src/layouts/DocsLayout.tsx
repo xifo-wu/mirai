@@ -112,6 +112,13 @@ const DocsLayout = (props: DocsLayoutProps) => {
       onClick: () => !isCurrent('/components/row') && router.push('/components/row'),
     },
     {
+      key: '/components/space',
+      content: (
+        <MenuItemTitle eqFunc={isCurrent} title="Space 间距" keyName="/components/space" />
+      ),
+      onClick: () => !isCurrent('/components/space') && router.push('/components/space'),
+    },
+    {
       key: '/components/switch',
       content: (
         <MenuItemTitle eqFunc={isCurrent} title="Switch 开关" keyName="/components/switch" />
