@@ -14,6 +14,10 @@
   ],
   "author": "Xifo",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xifo-wu/mirai/issues"
+  },
+  "homepage": "https://github.com/xifo-wu/mirai#readme",
   "devDependencies": {
     "@types/react": "^18.0.15",
     "react": "^18.2.0",

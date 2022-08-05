@@ -18,9 +18,9 @@
   "author": "Xifo Wu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xifo-wu/xifo/issues"
+    "url": "https://github.com/xifo-wu/mirai/issues"
   },
-  "homepage": "https://github.com/xifo-wu/xifo#readme",
+  "homepage": "https://github.com/xifo-wu/mirai#readme",
   "dependencies": {
     "classnames": "^2.3.1",
     "@emotion/is-prop-valid": "^1.1.3",

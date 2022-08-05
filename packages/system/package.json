@@ -9,6 +9,10 @@
   },
   "author": "",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xifo-wu/mirai/issues"
+  },
+  "homepage": "https://github.com/xifo-wu/mirai#readme",
   "dependencies": {
     "lodash.defaultsdeep": "^4.6.1"
   },
