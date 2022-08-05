@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://mirai.xifo.in">
-    <img width="128" src="https://mirai.xifo.in/_next/image?url=%2Flogo.png&w=48&q=75">
+    <img width="128" src="https://raw.githubusercontent.com/xifo-wu/mirai/main/packages/docs/public/logo.png">
   </a>
 </p>
 
