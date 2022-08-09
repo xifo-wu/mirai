@@ -1,6 +1,6 @@
 {
   "name": "@xifo/mirai-system",
-  "version": "0.0.2-alpha.1",
+  "version": "0.0.3-alpha.0",
   "description": "",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
