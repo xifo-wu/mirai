@@ -146,6 +146,13 @@ const DocsLayout = (props: DocsLayoutProps) => {
       ),
       onClick: () => !isCurrent('/hooks/use-controlled') && router.push('/hooks/use-controlled'),
     },
+    {
+      key: '/hooks/use-fullscreen',
+      content: (
+        <MenuItemTitle eqFunc={isCurrent} title="useFullscreen" keyName="/hooks/use-fullscreen" />
+      ),
+      onClick: () => !isCurrent('/hooks/use-fullscreen') && router.push('/hooks/use-fullscreen'),
+    },
   ];
 
   const toolsMenuItem = [
