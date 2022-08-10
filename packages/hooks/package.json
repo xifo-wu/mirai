@@ -18,6 +18,7 @@
     "url": "https://github.com/xifo-wu/mirai/issues"
   },
   "homepage": "https://github.com/xifo-wu/mirai#readme",
+  "type": "module",
   "dependencies": {
     "screenfull": "^6.0.2"
   },
