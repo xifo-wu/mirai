@@ -3,7 +3,7 @@
     "packages/*"
   ],
   "useNx": false,
-  "version": "0.0.3-alpha.3",
+  "version": "0.0.3-alpha.4",
   "command": {
     "version": {
       "message": "chore(release): publish %v"
