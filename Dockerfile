@@ -5,20 +5,17 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager
-COPY ./packages/docs/package.json ./
-# COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
-# RUN \
-#   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-#   elif [ -f package-lock.json ]; then npm ci; \
-#   elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i; \
-#   else echo "Lockfile not found." && exit 1; \
-#   fi
+COPY ./packages/docs/package.json yarn.lock* ./
+# COPY package.json yarn.lock* ./
+RUN \
+  if [ -f yarn.lock ]; then yarn; \
+  fi
 
 
 # Rebuild the source code only when needed
 FROM node:16-alpine AS builder
 WORKDIR /app
-# COPY --from=deps /app/node_modules ./node_modules
+COPY --from=deps /app/node_modules ./node_modules
 COPY ./packages/docs .
 
 # Next.js collects completely anonymous telemetry data about general usage.
@@ -26,7 +23,7 @@ COPY ./packages/docs .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN yarn
+# RUN yarn
 RUN yarn build
 
 # If using npm comment out above and use below instead
