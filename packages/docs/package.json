@@ -1,6 +1,6 @@
 {
   "name": "@xifo/mirai-docs",
-  "version": "0.0.2-alpha.1",
+  "version": "0.0.4-alpha.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,9 +14,9 @@
     "@emotion/react": "^11.9.3",
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.9.3",
-    "@xifo/mirai-hooks": "^0.0.2-alpha.1",
-    "@xifo/mirai-system": "^0.0.2-alpha.1",
-    "@xifo/mirai-ui": "^0.0.2-alpha.1",
+    "@xifo/mirai-hooks": "^0.0.4-alpha.1",
+    "@xifo/mirai-system": "^0.0.4-alpha.1",
+    "@xifo/mirai-ui": "^0.0.4-alpha.1",
     "classnames": "^2.3.1",
     "next": "12.2.3",
     "react": "18.2.0",
