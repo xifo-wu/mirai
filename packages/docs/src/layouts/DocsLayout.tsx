@@ -146,6 +146,13 @@ const DocsLayout = (props: DocsLayoutProps) => {
       ),
       onClick: () => !isCurrent('/hooks/use-controlled') && router.push('/hooks/use-controlled'),
     },
+    {
+      key: '/hooks/use-toggle',
+      content: (
+        <MenuItemTitle eqFunc={isCurrent} title="useToggle" keyName="/hooks/use-toggle" />
+      ),
+      onClick: () => !isCurrent('/hooks/use-toggle') && router.push('/hooks/use-toggle'),
+    },
   ];
 
   const toolsMenuItem = [

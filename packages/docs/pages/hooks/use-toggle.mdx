@@ -1,0 +1,29 @@
+import DocsLayout from '@/layouts/DocsLayout';
+import CustomSandpack from '@/components/Sandpack/CustomSandpack';
+
+export const baseCode = `const [value, setValue] = useToggle(false, true);
+const [display, setDisplay] = useToggle('block', 'none');`;
+export const useCode = `import { Button } from '@xifo/mirai-ui';
+import { useToggle } from '@xifo/mirai-hooks';
+
+function Page() {
+  const [color, toggleColor] = useToggle('#ed5736', '#065279')
+
+  return <Button color={color} onClick={toggleColor}>{color}</Button>;
+};
+
+export default Page;
+`;
+
+# useToggle
+
+该 hooks 作用是切换两个值，当我们想对其取相反的值时，它很方便，例如控制显示和隐藏、打开或关闭等。
+
+## 基本使用
+
+<CustomSandpack isOnlyEditor isReadonly currentPageCode={baseCode} />
+
+## 代码演示
+<CustomSandpack isReadonly currentPageCode={useCode} />
+
+export default ({ children }) => <DocsLayout>{children}</DocsLayout>
