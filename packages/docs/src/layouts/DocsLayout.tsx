@@ -175,6 +175,7 @@ const DocsLayout = (props: DocsLayoutProps) => {
         logo={
           <Image
             src="/logo.png"
+            alt="logo"
             width={40}
             height={40}
             style={{ cursor: 'pointer' }}
