@@ -1,17 +1,23 @@
-// const [value, setValue] = useToggle(true, false)
-
 import { useState, useRef } from 'react';
 
-export default function useToggle<T, U = T>(defaultValue: T, toggledValue: U) {
-  // flag 为 true 时使用 defaultValue
-  const flag = useRef(true);
-  const [value, setValue] = useState<T | U>(defaultValue);
+function useToggle(): [value: boolean, setValue: () => void];
+function useToggle<T, U = T>(
+  defaultValue: T,
+  toggledValue: U,
+): [value: T | U, setValue: () => void];
+function useToggle<T, U = T>(defaultValue?: T, toggledValue?: U) {
+  const flag = useRef<boolean>(false);
+  const nextDefaultValue: boolean | T = defaultValue === undefined ? false : defaultValue;
+  const nextToggledValue: boolean | U = toggledValue === undefined ? true : toggledValue;
 
-  function toggle() {
+  const [value, setValue] = useState<T | U | boolean>(nextDefaultValue);
+
+  const toggle = () => {
     flag.current = !flag.current;
-
-    setValue(flag.current ? defaultValue : toggledValue);
-  }
+    setValue(flag.current ? nextToggledValue : nextDefaultValue);
+  };
 
   return [value, toggle] as const;
 }
+
+export default useToggle;
