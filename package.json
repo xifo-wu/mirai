@@ -10,7 +10,7 @@
     "dev": "yarn --cwd ./packages/docs dev"
   },
   "devDependencies": {
-    "lerna": "^5.1.8"
+    "lerna": "^5.4.3"
   },
   "workspaces": [
     "packages/*"
