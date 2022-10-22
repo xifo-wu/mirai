@@ -7,10 +7,11 @@
     "build:hooks": "lerna run build --scope=@xifo/mirai-hooks",
     "build:docs": "lerna run build --scope=@xifo/mirai-docs",
     "build:all": "yarn build && yarn build:docs",
-    "dev": "yarn --cwd ./packages/docs dev"
+    "dev": "yarn --cwd ./packages/docs dev",
+    "start": "yarn --cwd ./packages/docs start"
   },
   "devDependencies": {
-    "lerna": "^5.4.3"
+    "lerna": "^5.6.2"
   },
   "workspaces": [
     "packages/*"
